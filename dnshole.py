@@ -5,6 +5,7 @@ import re
 import requests
 
 
+LOCAL_ADDR = "127.0.0.1"
 LOCAL_RE = r"^[0-9a-fA-F:\.]+[\s]+([0-9a-zA-Z_\-\.]+)$"
 
 
@@ -12,10 +13,12 @@ if __name__ == "__main__":
     argparser = argparse.ArgumentParser()
     argparser.add_argument("sources", type=str, help="sources file")
     argparser.add_argument("output", type=str, help="output file")
+    argparser.add_argument("-a", "--addr", type=str, default=LOCAL_ADDR, help="destination address")
     argparser.add_argument("-l", "--local", type=str, help="local hosts file")
     argparser.add_argument("-v", "--verbose", action="store_true", default=False)
     args = argparser.parse_args()
 
+    local_data = ""
     results = set()
     excluded = set([
         "local",
@@ -81,11 +84,12 @@ if __name__ == "__main__":
             print(f"Added {add_count}/{raw_count} hosts")
 
     with open(args.output, "w") as out_file:
-        out_file.write(local_data)
-        out_file.write("\n")
+        if local_data:
+            out_file.write(local_data)
+            out_file.write("\n")
 
         for r in results:
-            out_file.write(f"127.0.0.1 {r}\n")
+            out_file.write(f"{args.addr} {r}\n")
 
         if args.verbose:
             print(f"Wrote {len(results)} hosts to {args.output}")

@@ -7,7 +7,7 @@ dnshole.py is a python tool that combines public dns block lists into a single h
 Copy `dnshole.py` and `sources.list` to `/opt/dnshole` and run `/opt/dnshole/dnshole.py`:
 
 ```
-usage: dnshole.py [-h] [-l LOCAL] [-v] sources output
+usage: dnshole.py [-h] [-a ADDR] [-l LOCAL] [-v] sources output
 
 positional arguments:
   sources               sources file
@@ -15,6 +15,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
+  -a ADDR, --addr ADDR  destination address
   -l LOCAL, --local LOCAL
                         local hosts file
   -v, --verbose
