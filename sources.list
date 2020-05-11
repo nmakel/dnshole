@@ -1,0 +1,49 @@
+[
+    {
+        "enabled": True,
+        "name": "https://someonewhocares.org",
+        "url": "https://someonewhocares.org/hosts/hosts",
+        "pattern": r"^127\.0\.0\.1[\s]+([0-9a-zA-Z_\-\.]+)"
+    },
+    {
+        "enabled": True,
+        "name": "https://github.com/AdAway/adaway.github.io",
+        "url": "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt",
+        "pattern": r"^127\.0\.0\.1[\s]+([0-9a-zA-Z_\-\.]+)"
+
+    },
+    {
+        "enabled": True,
+        "name": "https://gitlab.com/andryou/block/",
+        "url": "https://gitlab.com/andryou/block/raw/master/kouhai-compressed-domains",
+        "pattern": r"^([0-9a-zA-Z_\-\.]+)"
+
+    },
+    {
+        "enabled": True,
+        "name": "https://oisd.nl",
+        "url": "https://dbl.oisd.nl",
+        "pattern": r"^([0-9a-zA-Z_\-\.]+)"
+
+    },
+    {
+        "enabled": True,
+        "name": "https://disconnect.me",
+        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt",
+        "pattern": r"^([0-9a-zA-Z_\-\.]+)"
+
+    },
+    {
+        "enabled": True,
+        "name": "https://github.com/notracking/hosts-blocklists",
+        "url": "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/dnscrypt-proxy/dnscrypt-proxy.blacklist.txt",
+        "pattern": r"^([0-9a-zA-Z_\-\.]+)"
+
+    },
+    {
+        "enabled": True,
+        "name": "https://github.com/StevenBlack/hosts",
+        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+        "pattern": r"^0\.0\.0\.0[\s]+([0-9a-zA-Z_\-\.]+)"
+    }
+]
