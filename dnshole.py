@@ -10,9 +10,9 @@ LOCAL_RE = r"^[0-9a-fA-F:\.]+[\s]+([0-9a-zA-Z_\-\.]+)$"
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser()
-    argparser.add_argument("sources", type=str)
-    argparser.add_argument("output", type=str)
-    argparser.add_argument("-l", "--local", type=str)
+    argparser.add_argument("sources", type=str, help="sources file")
+    argparser.add_argument("output", type=str, help="output file")
+    argparser.add_argument("-l", "--local", type=str, help="local hosts file")
     argparser.add_argument("-v", "--verbose", action="store_true", default=False)
     args = argparser.parse_args()
 
