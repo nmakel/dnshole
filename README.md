@@ -1,6 +1,7 @@
 # dnshole
 
-dnshole.py is a python tool that combines public dns block lists into a single hosts file. It deduplicates entries, optionally prefixes a local hosts file, and prevents locally defined hosts from being modified.
+dnshole.py is a python tool that combines public DNS block lists into a single hosts file. It deduplicates entries, optionally prefixes a local hosts file, and prevents locally defined hosts from being modified.
+
 
 ## Usage
 
@@ -21,7 +22,29 @@ optional arguments:
   -v, --verbose
 ```
 
-#### Periodically update /etc/hosts
+
+### Add or remove source lists
+
+Entries in `sources.list` are python `dict` items in a `list`. Their properties are:
+
+```
+    {
+        "enabled": True,
+        "name": "Sample List",
+        "url": "https://example.org/list",
+        "pattern": r"^127\.0\.0\.1[\s]+([0-9a-zA-Z_\-\.]+)"
+    }
+```
+
+Public or private lists of advertising or otherwise undesirable domains can be included by adding an entry such as the one above. The `pattern` property is a regular expression that results in only a single fully qualified domain name per line. Modify this regular expression to suit the source material. Set `enabled` to `False` to disable an entry.
+
+
+### 127.0.0.1 or 0.0.0.0
+
+The destination address of all hosts in the output hosts list is `127.0.0.1` by default, but can be modified by passing the `-a` or `--addr` parameter, followed by the destination IP address. This may be useful if `0.0.0.0` results in faster loading times in your particular situation, or if you need to redirect requests to another system.
+
+
+## Periodically update /etc/hosts
 
 **Before you begin:** you should copy `/etc/hosts` to `/etc/hosts.local`. Provide this file using the `--local` parameter to have its contents placed at the start of the output hosts file.
 
