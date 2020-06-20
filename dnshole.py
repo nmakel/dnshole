@@ -74,7 +74,7 @@ if __name__ == "__main__":
                 raw_count += 1
 
                 if (source_result not in excluded
-                    and source_result not in results):
+                        and source_result not in results):
                     results.add(source_result)
                     add_count += 1
         except Exception as e:
