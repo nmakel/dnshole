@@ -44,7 +44,7 @@ Public or private lists of advertising or otherwise undesirable domains can be i
 The destination address of all hosts in the output hosts list is `127.0.0.1` by default, but can be modified by passing the `-a` or `--addr` parameter, followed by the destination IP address. This may be useful if `0.0.0.0` results in faster loading times in your particular situation, or if you need to redirect requests to another system.
 
 
-## Periodically update /etc/hosts
+### Periodically update /etc/hosts
 
 **Before you begin:** you should copy `/etc/hosts` to `/etc/hosts.local`. Provide this file using the `--local` parameter to have its contents placed at the start of the output hosts file.
 
